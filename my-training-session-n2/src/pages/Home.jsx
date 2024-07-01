@@ -1,35 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@nextui-org/react';
-import { useAtom, useUpdateAtom } from 'jotai'; // Import useUpdateAtom
+import { useAtom } from 'jotai'; // Only use useAtom
 import { cartAtom } from '../states/Cartatom';
 import { ItemsAtom } from '../states/ItemsAtom';
-import data from "../components/groceries.json"
 
 const Home = () => {
   const [cart, setCart] = useAtom(cartAtom);
-  // const setCart = useUpdateAtom(cartAtom)
   const [items, setItems] = useAtom(ItemsAtom); 
-  // const setItems = useUpdateAtom(ItemsAtom); // Use useUpdateAtom to update ItemsAtom
 
   const handlePress = (item) => {
-    // Check if item is already in cart
-    // const cartItem = cart.find((i) => i.id === item.id);
+    const cartItem = cart.find((i) => i.id === item.id);
 
-    // if (!cartItem) {
-    //   // If item is not in cart, add it with quantity 1
-    //   setCart([...cart, { ...item, quantity: 1 }]);
-    // } else {
-    //   // If item is already in cart, update its quantity
-    //   const updatedCart = cart.map((i) => {
-    //     if (i.id === item.id) {
-    //       return { ...i, quantity: i.quantity + 1 };
-    //     }
-    //     return i;
-    //   });
-    //   setCart(updatedCart);
-    // }
+    if (!cartItem) {
+      
+      setCart([...cart, { ...item, quantity: 1 }]);
+    } else {
+      
+      const updatedCart = cart.map((i) => {
+        if (i.id === item.id) {
+          return { ...i, quantity: i.quantity + 1 };
+        }
+        return i;
+      });
+      setCart(updatedCart);
+    }
 
-    // Update item quantity in ItemsAtom
+ 
     const updatedItems = items.map((i) => {
       if (i.id === item.id) {
         return { ...i, quantity: i.quantity + 1 };
@@ -43,10 +39,9 @@ const Home = () => {
     <div className="h-full">
       <div className="grid gap-4 grid-cols-3 w-11/12 m-auto mt-16">
         {items.map((item) => {
-          // Ensure each item has a quantity property initialized
+       
           if (!item.quantity) item.quantity = 0;
-          const disabled = item.quantity > 0; // Simplified disabled state
-
+          const disabled = item.quantity > 0; 
           const imageUrl = new URL(item.url, import.meta.url).href;
 
           return (
@@ -63,10 +58,10 @@ const Home = () => {
                   <h3>Weight: {item.volume} oz</h3>
                 </div>
               </div>
-              <div>
+              <div class="flex">
                 <Button
                   radius="full"
-                  disabled={disabled} // Use disabled prop directly
+                  disabled={disabled}
                   className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
                   onPress={() => {
                     handlePress(item);
@@ -74,6 +69,7 @@ const Home = () => {
                 >
                   Add
                 </Button>
+                <h3 class=' text-right grow'> Quantity in Cart: {item.quantity}</h3>
               </div>
             </div>
           );

@@ -4,69 +4,79 @@
         "name": "Apple",
         "url": "../assets/apple.png",
         "price": 0.99,
-        "volume": 0.7 
+        "volume": 0.7,
+        "quantity": 0 
     },
     {
         "id": "2",
         "name": "Banana",
         "url": "../assets/banana.png",
         "price": 0.99,
-        "volume": 3 
+        "volume": 3,
+        "quantity": 0 
     },
     {
         "id": "3",
         "name": "Spinach Bunch",
         "url": "../assets/Spinach.png",
         "price": 2.99,
-        "volume": 1
+        "volume": 1,
+        "quantity": 0
     },
     {
         "id": "4",
         "name": "Beatroot",
         "url": "../assets/Beatroot.png",
         "price": 1.99,
-        "volume": 0.7 
+        "volume": 0.7,
+        "quantity": 0 
     },
     {
         "id": "5",
         "name": "Baby Carrot bag",
         "url": "../assets/babycarrot.jpg",
         "price": 4.99,
-        "volume": 5  
+        "volume": 5,
+        "quantity": 0  
     },
     {
         "id": "6",
         "name": "C&H Cane Sugar",
         "url": "../assets/sugar.png",
         "price": 11.49,
-        "volume": 5 
+        "volume": 5,
+        "quantity": 0 
     },
     {
         "id": "7",
         "name": "Dorritos: Spicy Nacho",
         "url": "../assets/dorritos.png",
         "price": 4.59,
-        "volume": 0.7 
+        "volume": 0.7,
+        "quantity": 0 
     },
     {
         "id": "8",
         "name": "Cheerios Cereals",
         "url": "../assets/cereals.png",
         "price": 7.99,
-        "volume": 18.8
+        "volume": 18.8,
+        "quantity": 0
     },
     {
         "id": "9",
         "name": "Milk",
         "url": "../assets/milk.png",
         "price": 3.99,
-        "volume": 128 
+        "volume": 128,
+        "quantity": 0 
     },
     {
         "id": "10",
         "name": "Crackers",
         "url": "../assets/crackers.png",
         "price": 5.99,
-        "volume": 0.7 
+        "volume": 0.7,
+        "quantity": 0 
     }
 ]
