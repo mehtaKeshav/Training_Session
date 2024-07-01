@@ -85,7 +85,7 @@ const Cart = () => {
             </Button>
             <h1 className="ml-0">{item.name}</h1>
             <h1 className="text-center">({item.volume} oz)</h1>
-            <div className="ml-auto flex items-center space-x-2">
+            <div className=" absolute ml-96 flex items-center space-x-2">
               <h1>${item.price} X </h1>
               <Button
                 disableRipple
